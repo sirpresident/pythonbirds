@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=29):
         self.idade = idade
         self.nome = nome
@@ -18,8 +20,14 @@ if __name__ == '__main__':
     print(nixon.idade)
     for filho in nixon.filhos:
         print(filho.nome)
+    renzo.olhos = 1
+    del renzo.olhos
     nixon.sobrenome = 'Azevedo'  # Criando atributo dinamico em tempo de execucao!
     del nixon.filhos
     print(nixon.__dict__) # os atributos de instancia ficam presentes no __dict__
     print(renzo.__dict__)
     print(nixon.sobrenome)
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
+    print(renzo.olhos)
+    print(id(Pessoa.olhos), id(nixon.olhos), id(renzo.olhos))
