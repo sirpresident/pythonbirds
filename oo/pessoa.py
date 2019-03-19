@@ -41,3 +41,5 @@ if __name__ == '__main__':
     print(id(Pessoa.olhos), id(nixon.olhos), id(renzo.olhos))
     print(Pessoa.metodo_estatico(), renzo.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_classe(), renzo.nome_e_atributos_de_classe())
+
+# O metodo é uma função que pertence a uma classe, e portanto sempre está conectado a um objeto!
