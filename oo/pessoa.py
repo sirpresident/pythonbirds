@@ -31,6 +31,7 @@ if __name__ == '__main__':
     renzo.olhos = 1
     del renzo.olhos
     nixon.sobrenome = 'Azevedo'  # Criando atributo dinamico em tempo de execucao!
+    print(nixon.sobrenome)
     del nixon.filhos
     print(nixon.__dict__) # os atributos de instancia ficam presentes no __dict__
     print(renzo.__dict__)
