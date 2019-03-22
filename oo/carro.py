@@ -115,28 +115,20 @@ SUL = 'Sul'
 OESTE = 'Oeste'
 
 class Direcao:
+    rotacao_a_direita = {
+        NORTE: LESTE, LESTE: SUL, SUL: OESTE, OESTE: NORTE
+    }
+    rotacao_a_esquerda = {
+        NORTE: OESTE, LESTE: NORTE, SUL: LESTE, OESTE: SUL
+    }
     def __init__(self):
         self.valor = NORTE
 
     def girar_a_direita(self):
-        if self.valor == NORTE:
-            self.valor = LESTE
-        elif self.valor == LESTE:
-            self.valor = SUL
-        elif self.valor == SUL:
-            self.valor = OESTE
-        elif self.valor == OESTE:
-            self.valor = NORTE
+        self.valor = self.rotacao_a_direita [self.valor]
 
     def girar_a_esquerda(self):
-        if self.valor == NORTE:
-            self.valor = OESTE
-        elif self.valor == OESTE:
-            self.valor = SUL
-        elif self.valor == SUL:
-            self.valor = LESTE
-        elif self.valor == LESTE:
-            self.valor = NORTE
+        self.valor = self.rotacao_a_esquerda [self.valor]
 
 class Carro:
     def calcular_velocidade(self):
