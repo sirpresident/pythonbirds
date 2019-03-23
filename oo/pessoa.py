@@ -17,9 +17,11 @@ class Pessoa:
     def nome_e_atributos_de_classe(cls):
         return f'{cls} - olhos{cls.olhos}'
 
+class Homem(Pessoa):
+    pass
 
 if __name__ == '__main__':
-    renzo = Pessoa(nome='renzo')
+    renzo = Homem(nome='renzo')
     nixon = Pessoa(renzo, nome='Nixon')
     print(Pessoa.cumprimentar(nixon))
     print(id(nixon))
@@ -42,5 +44,9 @@ if __name__ == '__main__':
     print(id(Pessoa.olhos), id(nixon.olhos), id(renzo.olhos))
     print(Pessoa.metodo_estatico(), renzo.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_classe(), renzo.nome_e_atributos_de_classe())
-
+    pessoa=Pessoa('Anonimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(renzo, Homem))
+    print(isinstance(renzo, Pessoa))
 # O metodo é uma função que pertence a uma classe, e portanto sempre está conectado a um objeto!
