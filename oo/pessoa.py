@@ -20,8 +20,12 @@ class Pessoa:
 class Homem(Pessoa):
     pass
 
+class Mutante(Pessoa):
+    olhos = 5
+
+
 if __name__ == '__main__':
-    renzo = Homem(nome='renzo')
+    renzo = Mutante(nome='renzo')
     nixon = Pessoa(renzo, nome='Nixon')
     print(Pessoa.cumprimentar(nixon))
     print(id(nixon))
@@ -38,7 +42,6 @@ if __name__ == '__main__':
     print(nixon.__dict__) # os atributos de instancia ficam presentes no __dict__
     print(renzo.__dict__)
     print(nixon.sobrenome)
-    Pessoa.olhos = 3
     print(Pessoa.olhos)
     print(renzo.olhos)
     print(id(Pessoa.olhos), id(nixon.olhos), id(renzo.olhos))
@@ -49,4 +52,5 @@ if __name__ == '__main__':
     print(isinstance(pessoa, Homem))
     print(isinstance(renzo, Homem))
     print(isinstance(renzo, Pessoa))
+    print(renzo.olhos)
 # O metodo é uma função que pertence a uma classe, e portanto sempre está conectado a um objeto!
